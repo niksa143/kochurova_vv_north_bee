@@ -1,6 +1,7 @@
 {% if cookiecutter.tests_required %}
 from {{ cookiecutter.project_slug }}.cookiecutter_const import PROJECT_NAME_RUS
-from django.test import TestCase, LiveServerTestCase
+from django.test import TestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.urls import reverse
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -40,7 +41,7 @@ class HomePageTest(TestCase):
         selected_user = bool(User.objects.filter(username='foo'))
         self.assertEqual(selected_user, True)
 
-class SeleniumHomePageTest(LiveServerTestCase):
+class SeleniumHomePageTest(StaticLiveServerTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
