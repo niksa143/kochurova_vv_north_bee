@@ -1,6 +1,7 @@
 {% if cookiecutter.tests_required %}
 from {{ cookiecutter.project_slug }}.cookiecutter_const import PROJECT_NAME_RUS
 from django.test import TestCase
+from django.utils.html import escape
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.urls import reverse
 from selenium import webdriver
@@ -30,7 +31,7 @@ class HomePageTest(TestCase):
         {% endif %}
         response = self.client.get(reverse('home'))
         html = response.content.decode("utf8")
-        self.assertIn(PROJECT_NAME_RUS, html)
+        self.assertIn(escape(PROJECT_NAME_RUS), html)
 
     def test_user_can_be_created(self):
         """
