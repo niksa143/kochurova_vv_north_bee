@@ -5,6 +5,15 @@
 
 ## Установка
 
+Windows:
+```bash
+winget install --id=astral-sh.uv -e
+```
+
+```bash
+pip install uv
+```
+
 Cookiecutter должен быть установлен system wide, 
 т.е. не в виртуальном окружении.
 
