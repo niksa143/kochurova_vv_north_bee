@@ -32,10 +32,16 @@ pip install --no-index --find-links=D:\dependencies -r requirements.txt
 python manage.py migrate
 ```
 
-## Создать пользователя
+## Создать суперпользователя (по необходимости)
 ```bash
 python manage.py createsuperuser
 ```
+
+## Создать пользователей
+```bash
+python manage.py createusers
+```
+
 
 ## Запуск сервера
 ```bash
