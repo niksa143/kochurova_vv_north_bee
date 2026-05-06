@@ -38,7 +38,7 @@ $env:PYTHONIOENCODING="utf-8"; $env:LANG="ru_RU.UTF-8"; python -m cookiecutter g
 PYTHONIOENCODING=utf-8 LANG=C.UTF-8 python -m cookiecutter gh:Tmpgmv/cookiecutter-django-pkgh custom_user=y login_required=y tests_required=n
 ```
 
-<--
+<!--
 В колледже:
 ```bash
 $env:PYTHONIOENCODING="utf-8"; $env:LANG="ru_RU.UTF-8"; uv tool run cookiecutter 'http://gogs.wsr.ru:3000/grab/cookiecutter-django-pkgh.git' custom_user=y login_required=y tests_required=n
