@@ -17,6 +17,28 @@ pip install uv
 -->
 ## Разворачивание проекта из шаблона
 
+Установите Cookiecutter глобально (или в свой venv).
+
+```bash
+pip install cookiecutter
+```
+
+В колледже:
+```bash
+$env:PYTHONIOENCODING="utf-8"; $env:LANG="ru_RU.UTF-8"; python -m cookiecutter 'http://gogs.wsr.ru:3000/grab/cookiecutter-django-pkgh.git' custom_user=y login_required=y tests_required=n
+```
+
+Вне колледжа. Windows:
+```bash
+$env:PYTHONIOENCODING="utf-8"; $env:LANG="ru_RU.UTF-8"; python -m cookiecutter gh:Tmpgmv/cookiecutter-django-pkgh custom_user=y login_required=y tests_required=n
+```
+
+Вне колледжа. Linux:
+```bash
+PYTHONIOENCODING=utf-8 LANG=C.UTF-8 python -m cookiecutter gh:Tmpgmv/cookiecutter-django-pkgh custom_user=y login_required=y tests_required=n
+```
+
+<--
 В колледже:
 ```bash
 $env:PYTHONIOENCODING="utf-8"; $env:LANG="ru_RU.UTF-8"; uv tool run cookiecutter 'http://gogs.wsr.ru:3000/grab/cookiecutter-django-pkgh.git' custom_user=y login_required=y tests_required=n
@@ -31,6 +53,7 @@ $env:PYTHONIOENCODING="utf-8"; $env:LANG="ru_RU.UTF-8"; uv tool run cookiecutter
 ```bash
 PYTHONIOENCODING=utf-8 LANG=C.UTF-8 uv tool run cookiecutter gh:Tmpgmv/cookiecutter-django-pkgh custom_user=y login_required=y tests_required=n
 ```
+-->
 
 NB! Когда вы копируете текст из браузера (особенно из GitHub), пробел между словами может 
 быть не обычным пробелом (ASCII код 32), а специальным символом Юникода U+00A0 
