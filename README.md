@@ -22,7 +22,7 @@ pip install uv
 
 В колледже:
 ```bash
-pip install --no-index --find-links=D:\dependencies
+pip install --no-index --find-links=D:\dependencies -r D:\dependencies\requirements.txt
 ```
 
 Вне колледжа:
