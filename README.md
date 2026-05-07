@@ -22,7 +22,7 @@ pip install uv
 
 В колледже:
 ```bash
-pip install --no-index --find-links=D:\dependencies cookiecutter
+pip install --no-index --find-links=D:\dependencies
 ```
 
 Вне колледжа:
