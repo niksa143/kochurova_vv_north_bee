@@ -98,6 +98,22 @@ body.body-background-customized {
     border-color: var(--attention-color);
 }
 
+.attention-border-left {
+    border-left: solid var(--attention-color);
+}
+
+.attention-border-right {
+    border-right: solid var(--attention-color);
+}
+
+.attention-border-top {
+    border-top: solid var(--attention-color);
+}
+
+.attention-border-bottom {
+    border-bottom: solid var(--attention-color);
+}
+
 .errorlist {
     color: red;
 }
