@@ -11,4 +11,8 @@
 {% endblock %}
 
 {% block content %}
+    <a href="{% url 'new-quest' %}" class="btn attention">Добавить гостя</a>
+{% for object in object_list %}
+{% include 'objects/main.html' %}
+{% endfor %}
 {% endblock %}

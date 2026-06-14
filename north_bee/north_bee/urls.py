@@ -23,13 +23,21 @@ from django.urls import path, include
 from django.conf import settings  # PREP
 from django.conf.urls.static import static  # PREP
 
+from general.views import QuestCreateView
+from history.views import HistoryListView
+
 from home.views import HomeView
+from quests.views import QuestUpdateView
 
 urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
     
     path("", HomeView.as_view(), name="home"),
-    
+
+    path("quests/new",QuestCreateView.as_view(),name="new-quest"),
+    path("quests/<int:pk>/update",QuestUpdateView.as_view(),name="quest-update"),
+    path("quests/<int:pk>/history",HistoryListView.as_view(),name="quest-history"),
+
     path("admin/", admin.site.urls),
 ]
 

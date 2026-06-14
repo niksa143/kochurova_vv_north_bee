@@ -1,0 +1,48 @@
+{% load static %}
+{% load bootstrap_icons %}
+
+{% comment %}
+
+PREP
+
+https://getbootstrap.com/docs/5.3/utilities/spacing/#gap
+
+Элемент <a> с классом stretched-link добавляет псевдо-элемент,
+который имеет ширину и высоту.
+
+Будучи помещен выше внутренних дивов, он сдвигает элементы и
+рушит всю гармонию.
+
+Если поместить ссылку после внутренних дивов,
+визуально удваивается марджин снизу.
+
+Поэтому у внутренних дивов снизу нет марджинов.
+
+Ипользование:
+
+{% include 'objects/main.html' %}
+
+{% endcomment %}
+
+
+
+<div style="grid-template-columns: 4fr 1fr;" class="d-grid mb-3 mt-3 gap-3 {% if not user.is_superuser %}pb-1{% endif %} position-relative attention-border">
+    <div class="p-2 ms-3 mt-3 attention-border">
+        <p class="fw-bold">ФИО: {{object}}</p>
+        <p>Пол: {{object.gender.gender_name}}</p>
+        <p>Дата рождения: {{object.birthday}}</p>
+        <p>Сколько раз останавливался: {{object.get_visits_count}}</p>
+
+    </div>
+    <div class="p-2 me-3 mt-3 attention-border position-relative text-center">
+        <p>Статус</p>
+        <p>{{object.status.status_name}}</p>
+
+
+        <a class="btn attention position-absolute z-3" href="{{ object.get_history_url }}">История посещений</a>
+
+    </div>
+
+        <a href="{{object.get_update_url}}" class="stretched-link"></a>
+
+</div>

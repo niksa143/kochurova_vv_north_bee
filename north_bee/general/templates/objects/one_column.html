@@ -29,10 +29,13 @@ https://getbootstrap.com/docs/5.3/utilities/spacing/#gap
 <div style="grid-template-columns: 1fr;" class="d-grid mb-3 mt-3 {% if not user.is_superuser %}pb-3{% endif %} position-relative attention-border">
 
     <div class="p-2 ms-3 mt-3 me-3 mb-3 attention-border position-relative">
-        <p class="fw-bold">Grid item 2</p>
-        <p>Grid item 2</p>
-        <p>Grid item 2</p>
-        <p>Grid item 2</p>
+        <p class="fw-bold">{{object.datetime}}</p>
+        <p>Дата заезда: {{object.check_in}}</p>
+        <p>Дата выезда: {{object.check_out}}</p>
+        <p>Коментарий: {{object.comment}}</p>
+        <p>Отель: {{object.room.hotel.hotel_name}}</p>
+        <p>Номер комнаты: {{object.room.number}}</p>
+        <p>Тип номера: {{object.room.roomtype.roomtype_name}}</p>
 
         {% comment %}
         {% if user.is_superuser %}
